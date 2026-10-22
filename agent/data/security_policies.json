@@ -1,0 +1,52 @@
+[
+  {
+    "policy_id": "POL-001",
+    "name": "Phishing Response Policy",
+    "applies_to": ["phishing", "credential-theft", "brand-impersonation"],
+    "automatic_action": "quarantine",
+    "requires_human_review": false,
+    "escalate_if": ["wire-fraud", "business-email-compromise"],
+    "description": "Emails matching confirmed phishing indicators with high confidence are quarantined automatically. Medium-confidence or ambiguous cases go to human review.",
+    "scope": "all inbound email"
+  },
+  {
+    "policy_id": "POL-002",
+    "name": "Malware Attachment Policy",
+    "applies_to": ["malware", "malware-distribution", "executable"],
+    "automatic_action": "block_and_quarantine",
+    "requires_human_review": false,
+    "escalate_if": ["ransomware", "data-exfiltration"],
+    "description": "Emails containing or linking to known malware payloads are blocked and quarantined. Attachments with executable extensions from unknown senders trigger this policy.",
+    "scope": "all inbound email with attachments or download links"
+  },
+  {
+    "policy_id": "POL-003",
+    "name": "BEC / Wire-Fraud Review Policy",
+    "applies_to": ["bec", "wire-fraud", "business-email-compromise"],
+    "automatic_action": "hold_for_review",
+    "requires_human_review": true,
+    "escalate_if": ["confirmed-loss"],
+    "description": "Business Email Compromise and wire-fraud attempts always require human review before any action. No automatic blocking — false positives on legitimate financial emails are costly.",
+    "scope": "financial and executive communications"
+  },
+  {
+    "policy_id": "POL-004",
+    "name": "Suspicious-Link Policy",
+    "applies_to": ["suspicious", "url-shortener", "evasion"],
+    "automatic_action": "sandbox_and_review",
+    "requires_human_review": true,
+    "escalate_if": ["active-exploit"],
+    "description": "Emails with suspicious or shortened URLs that cannot be definitively classified are sandboxed and held for analyst review.",
+    "scope": "all inbound email containing hyperlinks"
+  },
+  {
+    "policy_id": "POL-005",
+    "name": "Allowlist Policy",
+    "applies_to": ["benign", "legitimate", "internal"],
+    "automatic_action": "allow",
+    "requires_human_review": false,
+    "escalate_if": [],
+    "description": "Messages from known-good domains and senders that match allowlist criteria are delivered normally.",
+    "scope": "all inbound email"
+  }
+]

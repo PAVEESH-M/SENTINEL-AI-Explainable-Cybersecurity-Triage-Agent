@@ -1,0 +1,47 @@
+[
+  {
+    "resource_id": "svc-api-prod",
+    "type": "service",
+    "environment": "production",
+    "status": "running",
+    "version": "2.4.1",
+    "description": "Public-facing REST API"
+  },
+  {
+    "resource_id": "svc-worker-prod",
+    "type": "service",
+    "environment": "production",
+    "status": "running",
+    "version": "1.9.0",
+    "description": "Background job processor"
+  },
+  {
+    "resource_id": "svc-api-staging",
+    "type": "service",
+    "environment": "staging",
+    "status": "running",
+    "version": "2.5.0-rc1",
+    "description": "Staging mirror of the production API"
+  },
+  {
+    "resource_id": "db-primary-prod",
+    "type": "database",
+    "environment": "production",
+    "status": "running",
+    "description": "Primary PostgreSQL cluster"
+  },
+  {
+    "resource_id": "db-staging-01",
+    "type": "database",
+    "environment": "staging",
+    "status": "running",
+    "description": "Staging database (ephemeral)"
+  },
+  {
+    "resource_id": "cache-prod-01",
+    "type": "cache",
+    "environment": "production",
+    "status": "running",
+    "description": "Redis cache cluster"
+  }
+]

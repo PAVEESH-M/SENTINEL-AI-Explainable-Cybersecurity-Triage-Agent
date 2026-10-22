@@ -1,0 +1,167 @@
+[
+  {
+    "id": "TI-001",
+    "type": "domain",
+    "value": "secure-paypal-verify.net",
+    "threat_type": "phishing",
+    "confidence": "high",
+    "tags": ["credential-theft", "brand-impersonation"],
+    "description": "Typosquatting domain impersonating PayPal; used in credential-harvesting campaigns targeting consumers.",
+    "first_seen": "2026-08-14",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-002",
+    "type": "domain",
+    "value": "amazon-security-alert.info",
+    "threat_type": "phishing",
+    "confidence": "high",
+    "tags": ["brand-impersonation", "social-engineering"],
+    "description": "Fake Amazon security-alert site harvesting login credentials and payment details.",
+    "first_seen": "2026-09-01",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-003",
+    "type": "domain",
+    "value": "microsoft-account-verify.co",
+    "threat_type": "phishing",
+    "confidence": "high",
+    "tags": ["credential-theft", "brand-impersonation"],
+    "description": "Impersonates Microsoft account services to steal Office 365 credentials.",
+    "first_seen": "2026-09-10",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-004",
+    "type": "url",
+    "value": "http://secure-paypal-verify.net/login",
+    "threat_type": "phishing",
+    "confidence": "high",
+    "tags": ["credential-theft"],
+    "description": "Direct credential-harvesting login page on the fake PayPal domain.",
+    "first_seen": "2026-08-14",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-005",
+    "type": "url",
+    "value": "http://dl.malware-drop.xyz/invoice.exe",
+    "threat_type": "malware",
+    "confidence": "high",
+    "tags": ["malware-distribution", "executable"],
+    "description": "Executable payload disguised as a business invoice; dropper for banking trojan.",
+    "first_seen": "2026-09-20",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-006",
+    "type": "domain",
+    "value": "malware-drop.xyz",
+    "threat_type": "malware",
+    "confidence": "high",
+    "tags": ["malware-distribution"],
+    "description": "Known malware-hosting domain distributing executable payloads via phishing emails.",
+    "first_seen": "2026-07-05",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-007",
+    "type": "domain",
+    "value": "cfo-wiring-request.com",
+    "threat_type": "bec",
+    "confidence": "high",
+    "tags": ["business-email-compromise", "wire-fraud"],
+    "description": "Domain used in BEC (Business Email Compromise) campaigns impersonating CFOs to request wire transfers.",
+    "first_seen": "2026-10-01",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-008",
+    "type": "url",
+    "value": "https://bit.ly/3xKr9fake",
+    "threat_type": "suspicious",
+    "confidence": "medium",
+    "tags": ["url-shortener", "evasion"],
+    "description": "Shortened URL observed in phishing campaigns; destination domain flagged separately.",
+    "first_seen": "2026-10-05",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-009",
+    "type": "domain",
+    "value": "dropbox.com",
+    "threat_type": "benign",
+    "confidence": "high",
+    "tags": ["legitimate", "file-sharing"],
+    "description": "Legitimate cloud storage service. No known malicious use in current campaigns.",
+    "first_seen": "2020-01-01",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-010",
+    "type": "domain",
+    "value": "hr-onboarding-portal.internal",
+    "threat_type": "benign",
+    "confidence": "high",
+    "tags": ["internal", "legitimate"],
+    "description": "Internal HR onboarding system; legitimate requests expected from this domain.",
+    "first_seen": "2024-03-01",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-011",
+    "type": "domain",
+    "value": "invoice-docs.ru",
+    "threat_type": "phishing",
+    "confidence": "medium",
+    "tags": ["invoice-fraud", "social-engineering"],
+    "description": "Russian-registered domain sending fake invoice PDFs; associated with credential-theft campaigns.",
+    "first_seen": "2026-09-15",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-012",
+    "type": "url",
+    "value": "https://microsoft-account-verify.co/reset-password",
+    "threat_type": "phishing",
+    "confidence": "high",
+    "tags": ["credential-theft", "password-reset-lure"],
+    "description": "Fake Microsoft password-reset page on impersonation domain.",
+    "first_seen": "2026-09-10",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-013",
+    "type": "domain",
+    "value": "github.com",
+    "threat_type": "benign",
+    "confidence": "high",
+    "tags": ["legitimate", "developer"],
+    "description": "Legitimate software development platform. Links expected in technical communications.",
+    "first_seen": "2020-01-01",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-014",
+    "type": "domain",
+    "value": "amazon.com",
+    "threat_type": "benign",
+    "confidence": "high",
+    "tags": ["legitimate", "ecommerce"],
+    "description": "Legitimate Amazon domain. Distinguish from typosquats like amazon-security-alert.info.",
+    "first_seen": "2020-01-01",
+    "source": "SENTINEL-SYNTH"
+  },
+  {
+    "id": "TI-015",
+    "type": "domain",
+    "value": "payroll-update-required.net",
+    "threat_type": "phishing",
+    "confidence": "high",
+    "tags": ["payroll-fraud", "credential-theft", "urgency-lure"],
+    "description": "Domain used to send fake payroll-update emails demanding employees re-enter banking details.",
+    "first_seen": "2026-10-08",
+    "source": "SENTINEL-SYNTH"
+  }
+]

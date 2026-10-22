@@ -1,0 +1,21 @@
+# Amazon Bedrock AgentCore features for Phantom Protocol.
+# `./kit deploy` adds what is enabled to deploy/agentcore/agentcore.json (via the AgentCore CLI)
+# and deploys it with the runtime. Use them from the agent through decider_kit/agentcore.py.
+#
+# Phantom Protocol uses neither Memory nor Gateway: the infrastructure registry is in-memory
+# for the hackathon and the three tools are local. Both remain off.
+
+memory:                    # AgentCore Memory: long-term memory across sessions.
+  enabled: false           # pairs with #context-memory
+  name: agentmemory
+  strategies: [SEMANTIC, USER_PREFERENCE]
+  expiry_days: 30
+
+gateway:                   # AgentCore Gateway: many tools behind one MCP endpoint.
+  enabled: false           # pairs with #tool-selection or #guardrails
+  name: tools
+  authorizer: AWS_IAM
+  targets:
+    - name: websearch
+      type: connector
+      connector: web-search

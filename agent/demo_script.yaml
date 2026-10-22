@@ -1,0 +1,28 @@
+# SENTINEL AI demo script.
+# Each turn is typed into the demo UI against the real agent.
+# `narrate` describes the situation only — make_video.py appends what the decider actually
+# decided, so the narration never claims something that did not happen.
+# Keep total under about 2.5 minutes.
+title: "SENTINEL AI: Explainable Cybersecurity Triage Agent"
+pitch: "An AI security triage agent that investigates suspicious emails and gates every consequential response with Strands Decider 2B."
+features:
+  - "submit a suspicious email or alert in plain language"
+  - "search a threat-intelligence database for matching domains and URLs"
+  - "retrieve applicable security policies for the detected threat type"
+  - "Strands Decider 2B checks authorization, evidence, and policy scope before every action"
+  - "ambiguous or low-confidence cases go to human review instead of proceeding"
+  - "a live decision panel shows each question's probability and the verdict"
+  - "full audit log of every proposed, approved, and blocked action"
+eager: false
+intro: "SENTINEL AI investigates suspicious emails step by step using Amazon Bedrock for reasoning and Strands Decider 2B to gate every consequential response."
+intro_normal: "SENTINEL AI runs on Amazon Bedrock AgentCore Runtime. Strands Decider 2B gates every security action before it executes."
+turns:
+  - say: "Can you check this email? It says: Your PayPal account has been limited. Verify at http://secure-paypal-verify.net/login"
+    narrate: "The user asks for analysis only — no authorization to act. Watch what the decider says about user_authorized."
+  - say: "That's a phishing email. Quarantine it please."
+    narrate: "Now the user explicitly authorizes the quarantine action."
+  - say: "Block this email too. The attachment link is http://dl.malware-drop.xyz/invoice.exe"
+    narrate: "A malware link — the agent looks up the domain in the threat-intel database and checks policy before blocking."
+  - say: "What should I do with an email from cfo-wiring-request.com asking for a wire transfer?"
+    narrate: "A business email compromise scenario. Policy requires human review for all BEC actions regardless of confidence."
+outro: "One forward pass per security decision, calibrated probabilities the code can branch on, and Amazon Bedrock for the investigation reasoning. Built with the AWS User Group Madurai Strands Decider hackathon kit."
